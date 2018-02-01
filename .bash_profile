@@ -56,7 +56,7 @@ export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/s
 
 
 # added by Anaconda2 4.4.0 installer
-export PATH="/Users/new/anaconda2/bin:$PATH"
+export PATH="/Users/new/anaconda3/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
 
 # added for Elmer installation
@@ -64,3 +64,6 @@ export PATH="/usr/local/Cellar/elmer/HEAD-2f2626c/bin:$PATH"
 
 # added for spyder startup
 export EVENT_NOKQUEUE=1
+
+# added by Anaconda2 installer
+export PATH="/Users/benhills/anaconda2/bin:$PATH"
