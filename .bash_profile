@@ -129,6 +129,10 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 alias ltx='pdflatex'
 alias bibltx='pdflatex && biber && pdflatex'
 
+# Loki Aliases
+alias loki="ssh -o 'IdentitiesOnly yes' -Y bhills@loki.ess.washington.edu"
+alias cploki='scp -P 27777 bhills@icehouse.ess.washington.edu:'
+
 ############################################################################################
 #export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
@@ -139,14 +143,18 @@ alias draw='MpasDraw.x'
 # added for Elmer installation
 export PATH="/usr/local/Cellar/elmer/HEAD-2f2626c/bin:$PATH"
 # added by Anaconda3 installer
-#export PATH="/Users/benhills/anaconda3/bin:$PATH"
+export PATH="/Users/benhills/anaconda3/bin:$PATH"
 # add python path
 export PYTHONPATH="/Users/benhills/Software/MyGitRepos/TemperatureModels/:$PYTHONPATH"
 export PYTHONPATH="/Users/benhills/Software/MyGitRepos/RadarScripts/:$PYTHONPATH"
 export PYTHONPATH="/Users/benhills/Software/MyGitRepos/CylindricalStefan/:$PYTHONPATH"
+export PYTHONPATH="/Users/benhills/Software/MyGitRepos/MappingTools/:$PYTHONPATH"
+export PYTHONPATH="/Users/benhills/Software/MyGitRepos/IceFlow/:$PYTHONPATH"
+export PYTHONPATH="/Users/benhills/Software/MyGitRepos/FractureMechanics/:$PYTHONPATH"
+export PYTHONPATH="/Users/benhills/Software/MyGitRepos/IceTemperature/:$PYTHONPATH"
+export PYTHONPATH="/Users/benhills/Software/MyGitRepos/EffectiveMedium/:$PYTHONPATH"
 # added for spyder startup
 export EVENT_NOKQUEUE=1
-
 
 # for gmt
 export DYLD_LIBRARY_PATH=/usr/local/opt/hdf5/lib/libhdf5.103.dylib
@@ -166,6 +174,10 @@ alias gg='/Users/benhills/Software/gamit_globk'
 # for SeidarT
 export PATH="/Users/benhills/Software/SeidarT/bin/:$PATH"
 export PYTHONPATH="/Users/benhills/Software/SeidarT/bin/:$PYTHONPATH"
+# for ICESat-2
+export PYTHONPATH="/Users/benhills/Software/read-ICESat-2/icesat2_toolkit/:$PYTHONPATH"
+# for GMSH
+alias gmsh='/Applications/Gmsh.app/Contents/MacOS/gmsh'
 
 # delete duplicate PATH entries
 PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
@@ -183,5 +195,11 @@ else
         \export PATH="/Users/benhills/anaconda3/bin:$PATH"
     fi
 fi
-unset __conda_setup
+#unset __conda_setup
 # <<< conda init <<<
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/benhills/google-cloud-sdk/path.bash.inc' ]; then . '/Users/benhills/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/benhills/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/benhills/google-cloud-sdk/completion.bash.inc'; fi
